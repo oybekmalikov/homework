@@ -1,0 +1,600 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Roboto;
+}
+
+$focus: #dcdbdb;
+$primary-color: #028979;
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+
+.navbar {
+	display: flex;
+	position: fixed;
+	background-color: $primary-color;
+	width: 100%;
+	height: 100px;
+	top: 0;
+	z-index: 50;
+	justify-content: space-between;
+	padding: 0 20px;
+
+	.first-div {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		margin-left: 0;
+
+		@media (min-width: $breakpoint-lg) {
+			margin-left: 200px;
+		}
+
+		.bar {
+			display: block;
+			color: white;
+			font-size: 24px;
+			cursor: pointer;
+
+			@media (min-width: $breakpoint-lg) {
+				display: none;
+			}
+		}
+	}
+
+	.first-div p {
+		margin: auto 0;
+		font-size: 30px;
+		font-family: serif;
+		font-weight: 600;
+		color: white;
+
+		@media (min-width: $breakpoint-md) {
+			font-size: 40px;
+		}
+	}
+
+	.second-div {
+		display: none;
+		position: fixed;
+		top: 100px;
+		left: 0;
+		width: 100%;
+		background-color: $primary-color;
+		flex-direction: column;
+		gap: 15px;
+		padding: 20px;
+		margin: 0;
+		align-items: flex-start;
+
+		@media (min-width: $breakpoint-lg) {
+			display: flex;
+			position: static;
+			flex-direction: row;
+			margin: 15px 0 0 50px;
+			padding: 0;
+			align-items: center;
+			width: auto;
+			background-color: transparent;
+
+			@media (min-width: 1300px) {
+				margin-left: 350px;
+			}
+		}
+
+		&.active {
+			display: flex;
+		}
+	}
+
+	.second-div a {
+		text-decoration: none;
+		color: #fff;
+		font-size: 18px;
+
+		@media (min-width: $breakpoint-md) {
+			font-size: 20px;
+		}
+	}
+
+	.second-div button {
+		height: 40px;
+		width: 80px;
+		font-size: 17px;
+		border: 1px solid #fff;
+		border-radius: 5px;
+	}
+
+	.light {
+		background-color: #fff;
+		border: 0;
+	}
+
+	.light:hover {
+		transform: scale(1.2);
+	}
+
+	.sign:hover {
+		color: #fff;
+		background-color: $primary-color;
+		transform: scale(1.17);
+		cursor: pointer;
+	}
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 150px 20px 50px;
+	gap: 30px;
+
+	@media (min-width: $breakpoint-md) {
+		flex-direction: row;
+		margin: 200px 50px;
+	}
+
+	@media (min-width: $breakpoint-lg) {
+		margin: 200px;
+	}
+
+	.great-buisness {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		width: 100%;
+		max-width: 600px;
+
+		h2 {
+			font-weight: 600;
+			font-size: 36px;
+			max-width: 100%;
+
+			@media (min-width: $breakpoint-md) {
+				font-size: 50px;
+				max-width: 450px;
+			}
+		}
+
+		span {
+			max-width: 100%;
+
+			@media (min-width: $breakpoint-md) {
+				max-width: 400px;
+			}
+		}
+
+		.email-line {
+			display: flex;
+			position: relative;
+			width: 100%;
+
+			input {
+				width: 100%;
+				height: 50px;
+				margin-right: 0;
+				padding: 5px 15px;
+				border: 1px solid rgba(0, 0, 0, 0.3);
+				border-radius: 25px;
+
+				@media (min-width: $breakpoint-md) {
+					margin-right: 200px;
+				}
+			}
+
+			input:focus {
+				background-color: $focus;
+			}
+
+			button {
+				position: absolute;
+				right: 5px;
+				top: 5px;
+				bottom: 5px;
+				border: 1px solid rgba(0, 0, 0, 0.3);
+				border-radius: 25px;
+				height: 40px;
+				width: 80px;
+				color: #fff;
+				background-color: $primary-color;
+
+				@media (min-width: $breakpoint-md) {
+					right: 208px;
+				}
+			}
+
+			button:hover {
+				transform: scale(1.19);
+			}
+		}
+
+		.join-over img {
+			width: 100%;
+			max-width: 400px;
+		}
+	}
+
+	.images {
+		width: 100%;
+		max-width: 500px;
+		margin-top: 30px;
+
+		@media (min-width: $breakpoint-md) {
+			width: 30%;
+			margin-top: 0;
+		}
+	}
+}
+
+.latest-stories {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+	padding: 0 20px;
+
+	#lt-p {
+		font-weight: 600;
+		font-size: 30px;
+		text-align: center;
+
+		@media (min-width: $breakpoint-md) {
+			font-size: 40px;
+		}
+	}
+
+	.items {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+		margin: 0;
+
+		@media (min-width: $breakpoint-md) {
+			margin: 0 50px;
+		}
+
+		.item {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid rgba(0, 0, 0, 0.3);
+			border-radius: 10px;
+			width: 100%;
+			max-width: 350px;
+
+			img {
+				width: 100%;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+
+			span {
+				margin: 20px;
+			}
+
+			p {
+				margin-bottom: 20px;
+				font-size: 18px;
+				max-width: 300px;
+				font-weight: 600;
+				text-align: center;
+
+				@media (min-width: $breakpoint-md) {
+					font-size: 20px;
+				}
+			}
+		}
+
+		.item:hover {
+			transform: scale(1.05);
+
+			@media (min-width: $breakpoint-md) {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.more {
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+	}
+}
+
+.contact-us {
+	display: flex;
+	flex-direction: column;
+	margin: 50px 20px;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 0;
+	width: calc(100% - 40px);
+
+	@media (min-width: $breakpoint-md) {
+		margin: 50px 100px;
+	}
+
+	@media (min-width: $breakpoint-lg) {
+		margin: 50px 300px;
+	}
+
+	#cnct {
+		font-size: 30px;
+		font-weight: 600;
+		margin: 20px 0;
+		text-align: center;
+
+		@media (min-width: $breakpoint-md) {
+			font-size: 40px;
+		}
+	}
+
+	span {
+		margin: 5px 0;
+		text-align: center;
+	}
+
+	.social {
+		margin: 40px 0;
+		display: flex;
+		gap: 30px;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		@media (min-width: $breakpoint-md) {
+			gap: 50px;
+		}
+
+		a {
+			color: $primary-color;
+			font-size: 30px;
+
+			@media (min-width: $breakpoint-md) {
+				font-size: 40px;
+			}
+		}
+	}
+
+	.loco-img {
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 50px 0;
+		gap: 30px;
+		position: relative;
+		width: 100%;
+
+		#send-msg {
+			font-size: 24px;
+			font-weight: 600;
+			text-align: center;
+
+			@media (min-width: $breakpoint-md) {
+				font-size: 30px;
+			}
+		}
+
+		input {
+			width: 100%;
+			height: 40px;
+			padding: 10px 20px;
+			border: 1px solid rgba(0, 0, 0, 0.3);
+			border-radius: 20px;
+			max-width: 600px;
+		}
+
+		input:focus {
+			background-color: $focus;
+		}
+
+		textarea {
+			width: 100%;
+			height: 200px;
+			padding: 10px 20px;
+			border: 1px solid rgba(0, 0, 0, 0.3);
+			border-radius: 5px;
+			max-width: 600px;
+		}
+
+		textarea:focus {
+			background-color: $focus;
+		}
+
+		button {
+			height: 40px;
+			width: 100px;
+			border: 1px solid rgba(0, 0, 0, 0.3);
+			border-radius: 20px;
+			color: #fff;
+			font-size: 15px;
+			background-color: $primary-color;
+			left: 5px;
+		}
+
+		button:hover {
+			transform: scale(1.2);
+			cursor: pointer;
+		}
+	}
+}
+
+.footer-section {
+	display: flex;
+	flex-direction: column;
+	margin: 50px 20px;
+	gap: 40px;
+
+	@media (min-width: $breakpoint-md) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 50px;
+		gap: 20px;
+	}
+
+	@media (min-width: $breakpoint-lg) {
+		margin: 50px 100px;
+		justify-content: center;
+	}
+
+	.footer-first {
+		display: block;
+		text-align: center;
+		width: 100%;
+		margin-right: 0;
+
+		@media (min-width: $breakpoint-md) {
+			width: calc(50% - 10px);
+		}
+
+		@media (min-width: $breakpoint-lg) {
+			width: 20%;
+			margin-right: 50px;
+		}
+	}
+
+	.first-1 {
+		font-size: 24px;
+		font-family: serif;
+		font-weight: 600;
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+
+		@media (min-width: $breakpoint-md) {
+			font-size: 30px;
+		}
+	}
+
+	.social {
+		width: 100%;
+		display: flex;
+		margin-top: 25px;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.footer-second {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		align-items: center;
+
+		@media (min-width: $breakpoint-md) {
+			width: calc(50% - 10px);
+			align-items: flex-start;
+		}
+
+		@media (min-width: $breakpoint-lg) {
+			width: 20%;
+		}
+	}
+
+	.footer-second p {
+		font-weight: 600;
+		font-size: 18px;
+		text-align: center;
+
+		@media (min-width: $breakpoint-md) {
+			font-size: 20px;
+			text-align: left;
+		}
+	}
+
+	.footer-second a {
+		text-decoration: none;
+		color: #000;
+		text-align: center;
+
+		@media (min-width: $breakpoint-md) {
+			text-align: left;
+		}
+	}
+
+	.footer-third {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+
+		@media (min-width: $breakpoint-md) {
+			width: 100%;
+		}
+
+		@media (min-width: $breakpoint-lg) {
+			width: 20%;
+			align-items: flex-start;
+		}
+	}
+
+	.footer-third p {
+		font-weight: 600;
+		font-size: 18px;
+		max-width: 100%;
+		text-align: center;
+
+		@media (min-width: $breakpoint-md) {
+			font-size: 20px;
+			max-width: 250px;
+			text-align: left;
+		}
+	}
+
+	.footer-third input {
+		height: 35px;
+		border-left: 1px solid #afafaf;
+		border-right: 1px solid #afafaf;
+		border-top: 1px solid #afafaf;
+		padding: 5px 10px;
+		font-size: 16px;
+		width: 100%;
+		max-width: 300px;
+
+		@media (min-width: $breakpoint-md) {
+			font-size: 18px;
+		}
+	}
+
+	.footer-third input:focus {
+		background-color: #e8e3e3;
+		border-radius: 2px;
+	}
+
+	.footer-third button {
+		background-color: $primary-color;
+		border-radius: 5px;
+		height: 35px;
+		color: #fff;
+		width: 100px;
+		border: 2px solid transparent;
+	}
+
+	.footer-third button:hover {
+		cursor: pointer;
+		transform: scale(1.2);
+	}
+}
+
+.last {
+	text-align: center;
+	padding: 20px;
+}
